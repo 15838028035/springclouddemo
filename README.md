@@ -19,6 +19,8 @@
 | Maven | 3.x                  |
 
 ## 模块介绍：
+| 项目名称                                     | 描述                                                                                                                     |
+| -------------------| ---------------------------------------- |
 | microservice-common-model            | 公共实体对象 |
 | microservice-provider-dal            | 公共dao和service层 |
 | microservice-provider-secrity        |  服务提供者       |
