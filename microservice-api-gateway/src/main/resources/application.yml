@@ -1,0 +1,14 @@
+hystrix: 
+  command: 
+    default: 
+      execution: 
+        isolation: 
+          thread: 
+            timeoutInMilliseconds: 120000  
+ribbon: 
+  ReadTimeout: 120000
+  ConnectTimeout: 120000
+zuul:
+    host:
+        socket-timeout-millis: 120000
+        connect-timeout-millis: 120000
