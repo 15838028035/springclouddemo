@@ -40,17 +40,21 @@
 | microservice-api-gateway                 | 8050 | API Gateway            |                 |
 | microservice-front-app                   | 8022 | 网站前台静态页面, 服务消费客户端   |                 |
 | microservice-discovery-eureka            | 9003 | 注册中心                                                    |                 |
-| microservice-provider-secrity            | 8002 | 服务提供者                                                | 用户服务                                 |
+| microservice-provider-secrity            | 8002 | 服务提供者                                                |                  |
 
 ## 快速上手
 
  1. 修改microservice-provider-dal项目中application.properties数据库的地址,账号密码
-  #mysql database config
- spring.datasource.url=jdbc:mysql://127.0.0.1:3306/test_db?useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
- #use jasypt to encrypt username/password
- spring.datasource.username=ENC(HTdPvf6oI3QOJJFq7Ht0qw==)
- # root
- spring.datasource.password=ENC(HTdPvf6oI3QOJJFq7Ht0qw==)
+ <pre>
+     <code>
+      #mysql database config
+     spring.datasource.url=jdbc:mysql://127.0.0.1:3306/test_db?useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+     #use jasypt to encrypt username/password
+     spring.datasource.username=ENC(HTdPvf6oI3QOJJFq7Ht0qw==)
+     # root
+     spring.datasource.password=ENC(HTdPvf6oI3QOJJFq7Ht0qw==)
+     </code>
+ </pre>
 
 执行springclouddemo\scripts\test_db.sql,创建测试表结构
 
