@@ -23,14 +23,11 @@
 | -------------------| ---------------------------------------- |
 | microservice-common-model            | 公共实体对象 |
 | microservice-provider-dal            | 公共dao和service层 |
-| microservice-provider-secrity        |  服务提供者       |
 | microservice-discovery-eureka        | 注册中心              |
 | microservice-config-server-eureka    | 可配置的注册中心服务端  demo            |
 | microservice-config-client-eureka    | 可配置的注册中心客户端demo              |
 | microservice-hystrix-turbine         |Turbine集群监控            |
 | microservice-hystrix-dashboard       | 服务断容面板              |
-
-
 | microservice-provider-secrity       | 服务提供者          |
 | microservice-api-gateway                 | API Gateway  
 | microservice-front-app                   | 网站前台静态页面, 服务消费客户端     |
@@ -48,12 +45,12 @@
 ## 快速上手
 
  1. 修改microservice-provider-dal项目中application.properties数据库的地址,账号密码
- #mysql database config
-spring.datasource.url=jdbc:mysql://127.0.0.1:3306/test_db?useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
-#use jasypt to encrypt username/password
-spring.datasource.username=ENC(HTdPvf6oI3QOJJFq7Ht0qw==)
-# root
-spring.datasource.password=ENC(HTdPvf6oI3QOJJFq7Ht0qw==)
+  #mysql database config
+ spring.datasource.url=jdbc:mysql://127.0.0.1:3306/test_db?useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+ #use jasypt to encrypt username/password
+ spring.datasource.username=ENC(HTdPvf6oI3QOJJFq7Ht0qw==)
+ # root
+ spring.datasource.password=ENC(HTdPvf6oI3QOJJFq7Ht0qw==)
 
 执行springclouddemo\scripts\test_db.sql,创建测试表结构
 
