@@ -140,9 +140,6 @@
             <if test="updateDate != null" >
                 update_date,
             </if>
-            <if test="enableFlag != null" >
-                enable_flag,
-            </if>
             <if test="parentId != null" >
                 parent_id,
             </if>
@@ -175,9 +172,6 @@
                 </if>
                 <if test="updateDate != null" >
                      #{updateDate,jdbcType=TIMESTAMP},
-                </if>
-                <if test="enableFlag != null" >
-                     #{enableFlag,jdbcType=VARCHAR},
                 </if>
                 <if test="parentId != null" >
                      #{parentId,jdbcType=INTEGER},

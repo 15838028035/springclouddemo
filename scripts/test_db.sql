@@ -31,18 +31,29 @@ INSERT INTO `upm_user` VALUES ('1', null, '8d969eef6ecad3c29a3a629280e686cf0c3f5
 INSERT INTO `upm_user` VALUES ('2', 'user2', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', null, null, '15838028033', null, null, null, null, null, null, null);
 
 
+
+SET FOREIGN_KEY_CHECKS=0;
+
 -- ----------------------------
--- Table structure for `upm_groups`
+-- Table structure for sec_groups
 -- ----------------------------
 DROP TABLE IF EXISTS `sec_groups`;
 CREATE TABLE `sec_groups` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `groupName` varchar(200) COLLATE utf8_bin DEFAULT NULL COMMENT '分组名称',
+  `group_name` varchar(200) COLLATE utf8_bin DEFAULT NULL COMMENT '分组名称',
   `create_by` int(11) DEFAULT NULL,
   `create_date` datetime DEFAULT NULL,
   `update_by` int(11) DEFAULT NULL,
   `update_date` datetime DEFAULT NULL,
   `enable_flag` datetime DEFAULT NULL,
-  `parent_id` int(11)  NULL ,
+  `parent_id` int(11) DEFAULT NULL,
+  `remarks` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '备注',
+  `create_by_uName` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `update_by_uName` varchar(20) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of sec_groups
+-- ----------------------------
+INSERT INTO `sec_groups` VALUES ('1', '111', '0', '2018-06-19 17:41:35', null, null, null, '11', '111', 'test', null);
