@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.lj.cloud.secrity.dal.UpmUserMapper" >
-  <resultMap id="BaseResultMap" type="com.weixindev.micro.serv.common.bean.secrity.UpmUser" >
+<mapper namespace="com.zhongkexinli.cloud.secrity.dal.UpmUserMapper" >
+  <resultMap id="BaseResultMap" type="com.zhongkexinli.micro.serv.common.bean.secrity.UpmUser" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="logini_no" property="loginiNo" jdbcType="VARCHAR" />
     <result column="pwd" property="pwd" jdbcType="VARCHAR" />
@@ -30,7 +30,7 @@
     delete from upm_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.weixindev.micro.serv.common.bean.secrity.UpmUser" >
+  <insert id="insert" parameterType="com.zhongkexinli.micro.serv.common.bean.secrity.UpmUser" >
     insert into upm_user (id, logini_no, pwd, 
       user_name, address, mobile, 
       create_by, create_date, update_by, 
@@ -42,7 +42,7 @@
       #{updateDate,jdbcType=TIMESTAMP}, #{enableFlag,jdbcType=VARCHAR}, #{orgDesc,jdbcType=VARCHAR}, 
       #{email,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.weixindev.micro.serv.common.bean.secrity.UpmUser" >
+  <insert id="insertSelective" parameterType="com.zhongkexinli.micro.serv.common.bean.secrity.UpmUser" >
     insert into upm_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -127,7 +127,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.weixindev.micro.serv.common.bean.secrity.UpmUser" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhongkexinli.micro.serv.common.bean.secrity.UpmUser" >
     update upm_user
     <set >
       <if test="loginiNo != null" >
@@ -169,7 +169,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.weixindev.micro.serv.common.bean.secrity.UpmUser" >
+  <update id="updateByPrimaryKey" parameterType="com.zhongkexinli.micro.serv.common.bean.secrity.UpmUser" >
     update upm_user
     set logini_no = #{loginiNo,jdbcType=VARCHAR},
       pwd = #{pwd,jdbcType=VARCHAR},

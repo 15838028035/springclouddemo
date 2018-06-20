@@ -15,7 +15,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="com.weixindev.micro.serv.common.bean.secrity" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.zhongkexinli.micro.serv.common.bean.secrity" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>

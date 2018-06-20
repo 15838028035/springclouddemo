@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
 
-<mapper namespace="com.lj.cloud.secrity.dal.SecAdminUserMapper">
-    <resultMap id="secAdminUserResult" type="com.weixindev.micro.serv.common.bean.secrity.SecAdminUser">
+<mapper namespace="com.zhongkexinli.cloud.secrity.dal.SecAdminUserMapper">
+    <resultMap id="secAdminUserResult" type="com.zhongkexinli.micro.serv.common.bean.secrity.SecAdminUser">
         <result property="id" column="id" jdbcType="INTEGER"   />
         <result property="loginiNo" column="logini_no" jdbcType="VARCHAR"   />
         <result property="mobile" column="mobile" jdbcType="VARCHAR"   />
@@ -77,7 +77,7 @@
    
 </insert>
 
- <insert id="insertSelective" parameterType="com.weixindev.micro.serv.common.bean.secrity.SecAdminUser">
+ <insert id="insertSelective" parameterType="com.zhongkexinli.micro.serv.common.bean.secrity.SecAdminUser">
           INSERT INTO sec_admin_user 
              <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="id != null" >
@@ -194,7 +194,7 @@
         </trim>
  </insert>
 
-    <update id="updateByPrimaryKeySelective" parameterType="com.weixindev.micro.serv.common.bean.secrity.SecAdminUser">
+    <update id="updateByPrimaryKeySelective" parameterType="com.zhongkexinli.micro.serv.common.bean.secrity.SecAdminUser">
     
         UPDATE sec_admin_user 
      

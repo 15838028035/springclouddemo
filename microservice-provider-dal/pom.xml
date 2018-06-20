@@ -8,8 +8,8 @@
 	<packaging>jar</packaging>
 
 	<parent>
-		<groupId>com.itmuch.cloud</groupId>
-		<artifactId>spring-cloud-microservice-weixin</artifactId>
+		<groupId>com.zhongkexinli.cloud</groupId>
+		<artifactId>spring-cloud-microservice-demo</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
@@ -122,7 +122,7 @@
 
 
 		<dependency>
-			<groupId>com.itmuch.cloud</groupId>
+			<groupId>com.zhongkexinli.cloud</groupId>
 			<artifactId>microservice-common-model</artifactId>
 		</dependency>
 
