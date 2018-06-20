@@ -48,23 +48,6 @@
     
     </select>
   
-   <select id="selectGrouInfoByLogin"  parameterType="String"  resultType="java.util.Map">
-     SELECT
-			sg.group_name,
-			sg.id sgId,
-			sc.menu_name,
-			sc.id menuId,
-			sc.sec_previleges_url,
-			sc.sec_parent_id
-		FROM
-			`sec_admin_user` su
-			LEFT JOIN sec_groups sg ON su.sec_group_id = sg.id
-			LEFT JOIN sec_previlege_relation sr ON sr.sec_ag_id = sg.id
-			LEFT JOIN sec_privileges_config sc ON sc.id = sr.sec_privilege_id
-		WHERE
-			su.logini_no = #{loginNo}
-      
-   </select>
    <select id="selectByPrimaryKey" parameterType="java.lang.Integer"  resultMap="secGroupsResult">
      select 
         <include refid="Base_Column_List"/>
@@ -182,35 +165,17 @@
     <update id="updateByPrimaryKeySelective" parameterType="com.zhongkexinli.micro.serv.common.bean.secrity.SecGroups">
         UPDATE sec_groups 
       <set >
-        <if test="remarks != null" >
+        <if test="remarks != ''" >
             remarks = #{remarks,jdbcType=VARCHAR} ,
         </if>
         <if test="groupName != null" >
             group_name = #{groupName,jdbcType=VARCHAR} ,
         </if>
-        <if test="createBy != null" >
-            create_by = #{createBy,jdbcType=INTEGER} ,
-        </if>
-        <if test="createByUname != null" >
-            create_by_uName = #{createByUname,jdbcType=VARCHAR} ,
-        </if>
-        <if test="createDate != null" >
-            create_date = #{createDate,jdbcType=TIMESTAMP}, 
-        </if>
         <if test="updateBy != null" >
             update_by = #{updateBy,jdbcType=INTEGER} ,
         </if>
-        <if test="updateByUname != null" >
-            update_by_uName = #{updateByUname,jdbcType=VARCHAR} ,
-        </if>
-        <if test="updateDate != null" >
+        <if test="updateDate != '' " >
             update_date = #{updateDate,jdbcType=TIMESTAMP} ,
-        </if>
-        <if test="enableFlag != null" >
-            enable_flag = #{enableFlag,jdbcType=VARCHAR} ,
-        </if>
-        <if test="parentId != null" >
-            parent_id = #{parentId,jdbcType=INTEGER} ,
         </if>
      </set>
         WHERE 
@@ -272,11 +237,7 @@
             update_by_uName as updateByUname  ,
            date_format(update_date, '%Y-%m-%d %H:%i:%s' )  as updateDate,
             enable_flag  as enableFlag,
-            parent_id as parentId ,
-            (
-                select count(1) as userCounts from sec_admin_user u where u.sec_group_id = g.id and
-                u.enable_flag='1'
-            )  as userCounts
+            parent_id as parentId 
             
        from sec_groups g WHERE 1=1  
       
@@ -294,9 +255,6 @@
   <select id="selectByInfoKeyData" resultType="java.util.HashMap">
       SELECT * FROM `sec_privileges_config` 
   </select>
-   <delete id="deleteByPrimaryGroupId">
-      DELETE FROM sec_previlege_relation WHERE sec_ag_id=#{id}
-   </delete>
    <insert id="insertURL">
        INSERT INTO `sec_previlege_relation` (
 				`sec_ag_id`,

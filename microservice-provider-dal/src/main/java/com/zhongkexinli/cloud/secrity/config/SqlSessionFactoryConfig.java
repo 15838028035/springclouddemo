@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 
 @Configuration
 @EnableTransactionManagement
-@MapperScan("com.lj.cloud.secrity.dal")
+@MapperScan("com.zhongkexinli.cloud.secrity.dal")
 public class SqlSessionFactoryConfig implements TransactionManagementConfigurer {
 
     @Autowired

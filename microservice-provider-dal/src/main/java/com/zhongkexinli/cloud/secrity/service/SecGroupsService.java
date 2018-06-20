@@ -9,10 +9,6 @@ import com.zhongkexinli.micro.serv.common.pagination.Query;
 
 
 public interface SecGroupsService  {
-	
-	List<Map<String, Object>> selectGrouInfoByLogin(String login);
-	
-	
 
     int deleteByPrimaryKey(Integer id);
 

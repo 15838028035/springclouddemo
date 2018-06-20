@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alibaba.druid.support.json.JSONUtils;
 import com.zhongkexinli.cloud.secrity.bean.SecGroupsTree;
 import com.zhongkexinli.cloud.secrity.constant.SecrityCommonConstant;
 import com.zhongkexinli.cloud.secrity.service.SecGroupsService;
@@ -42,104 +41,6 @@ public class SecGroupsController extends BaseController{
     protected Logger logger = LoggerFactory.getLogger(SecGroupsController.class);
     @Autowired
     private SecGroupsService secGroupsService;
-    
-    @ApiOperation(value = "获取组名信息")
-    @RequestMapping(value="/api/SecGroupInfo", method = RequestMethod.GET)
-    public RestAPIResult2 GroupInfo() throws Exception {
-    	  RestAPIResult2 restAPIResult = new RestAPIResult2();
-        List<SecGroups> secGroups =secGroupsService.selectByExample(null);
-        
-        restAPIResult.setRespCode(1);
-        restAPIResult.setRespMsg("操作成功");
-        try {
-     	   if(null!=secGroups&&secGroups.size()>0&&secGroups.get(0)!=null) {
-     		   restAPIResult.setRespData(secGroups);
-     		   
-     	   }else {
-     		   restAPIResult.setRespCode(0);
-     	       restAPIResult.setRespMsg("操作成功");
-     	   }
-        }catch(Exception e) {
-            restAPIResult.setRespCode(0);
-            restAPIResult.setRespMsg("失败成功:"+e.getMessage());
-        }
-
-        return restAPIResult;
-    }
-    @ApiOperation(value = "获取所有的菜单信息")
-    @RequestMapping(value="/api/SecGroupData", method = RequestMethod.GET)
-    public RestAPIResult2 showInfo() throws Exception {
-    	  RestAPIResult2 restAPIResult = new RestAPIResult2();
-        List<Map<String,Object>> secGroups =secGroupsService.selectByInfoKeyData();
-        
-        restAPIResult.setRespCode(1);
-        restAPIResult.setRespMsg("操作成功");
-        try {
-     	   if(null!=secGroups&&secGroups.size()>0&&secGroups.get(0)!=null) {
-     		   restAPIResult.setRespData(secGroups);
-     		   
-     	   }else {
-     		   restAPIResult.setRespCode(0);
-     	       restAPIResult.setRespMsg("操作成功");
-     	   }
-        }catch(Exception e) {
-            restAPIResult.setRespCode(0);
-            restAPIResult.setRespMsg("失败成功:"+e.getMessage());
-        }
-
-        return restAPIResult;
-    }
-    /** 显示 */
-    @ApiOperation(value = "获取管理员下的菜单信息")
-    @RequestMapping(value="/api/SecGroupData/{id}", method = RequestMethod.GET)
-    public RestAPIResult2 showInfo(@PathVariable("id") Integer id) throws Exception {
-    	  RestAPIResult2 restAPIResult = new RestAPIResult2();
-        List<Map<String,Object>> secGroups =secGroupsService.selectByInfoKey(id);
-        restAPIResult.setRespCode(1);
-        restAPIResult.setRespMsg("操作成功");
-        try {
-     	   if(null!=secGroups&&secGroups.size()>0&&secGroups.get(0)!=null) {
-     		   restAPIResult.setRespData(secGroups);
-     		   
-     	   }else {
-     		   restAPIResult.setRespCode(0);
-     	       restAPIResult.setRespMsg("操作成功");
-     	   }
-        }catch(Exception e) {
-            restAPIResult.setRespCode(0);
-            restAPIResult.setRespMsg("失败成功:"+e.getMessage());
-        }
-
-        return restAPIResult;
-    }
-    
-    /**
-     * 根据登录用户名称获取用户的菜单信息
-     * @param login
-     * @return
-     */
-    @ApiOperation(value = "获取用户菜单信息")
-    @RequestMapping(value = "/api/SecGroupsInfo", method = RequestMethod.GET)
-    public RestAPIResult2 getGroupInfoByLoginNo(String loginNo)  {
-        RestAPIResult2 restAPIResult = new RestAPIResult2();
-       List<Map<String,Object>> groupdata=secGroupsService.selectGrouInfoByLogin(loginNo);
-       restAPIResult.setRespCode(1);
-       restAPIResult.setRespMsg("操作成功");
-       try {
-    	   if(null!=groupdata&&groupdata.size()>0&&groupdata.get(0)!=null) {
-    		   restAPIResult.setRespData(JSONUtils.toJSONString(groupdata));
-    		   
-    	   }else {
-    		   restAPIResult.setRespCode(0);
-    	       restAPIResult.setRespMsg("操作成功");
-    	   }
-       }catch(Exception e) {
-           restAPIResult.setRespCode(0);
-           restAPIResult.setRespMsg("失败成功:"+e.getMessage());
-       }
-
-       return restAPIResult;
-    }
     
     @ApiOperation(value = "分页")
     @RequestMapping(value = "/api/SecGroups", method = RequestMethod.GET)
@@ -203,26 +104,7 @@ public class SecGroupsController extends BaseController{
 
         return restAPIResult;
     }
-    /** 保存更新  */
-    @ApiOperation(value = "修改权限")
-    @RequestMapping(value="/api/SecGroupsUrl/{id}",method=RequestMethod.PUT)
-    public RestAPIResult2 update(@PathVariable("id") Integer id ,String urids,String remarks,String groupName)  {
-        RestAPIResult2 restAPIResult = new RestAPIResult2();
-        restAPIResult.setRespCode(1);
-        restAPIResult.setRespMsg("操作成功");
-        try {
-        	String str[] = urids.split(",");
-//        	return 
-        	secGroupsService.updateByPrimaryKeySelective(id, Arrays.asList(str),remarks,groupName);
-        	
-
-        }catch(Exception e) {
-            restAPIResult.setRespCode(0);
-            restAPIResult.setRespMsg("失败:"+e.getMessage());
-        }
-
-        return restAPIResult;
-    }
+    
     /** 保存更新  */
     @ApiOperation(value = "修改")
     @RequestMapping(value="/api/SecGroups/{id}",method=RequestMethod.PUT)

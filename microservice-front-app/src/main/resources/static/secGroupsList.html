@@ -73,13 +73,9 @@
 <script>
     var acekeystoken = $.cookie('bearcktkaeskey');
     if (acekeystoken == ""||acekeystoken==undefined) {
-        parent.location.href = ctxApp + '/login.html';
+      
     }
     layui.use(['laypage', 'table', 'element', 'layer', 'laydate'], function () {
-    	
- 
-    	//initConfigSelect( "groupName");
-    	
     	
         var table = layui.table;
         var laydate = layui.laydate;
@@ -110,7 +106,6 @@
 // 			 		{field:'updateBy',title:'新更人ID'},
 // 			 		{field:'updateByUname',title:'更新人姓名'},
 // 			 		{field:'updateDate',title:'新更ID'},
-                {field: 'userCounts', title: '管理员人数'},
                 {field: 'opt', title: '操作', templet: '#optTpl'},
 
             ]]
@@ -204,74 +199,18 @@
 
     function update(id) {
         layer.open({
-            title: "编辑权限",
+            title: "编辑信息",
             type: 2,
             maxmin: true,
             area: ['680px', '580px'],
-            content: 'groups.html?id=' + id,
+            content: 'secGroupsAdd.html?id=' + id,
             // 下面这句是,添加页面关闭后,刷新本页面.
             end: function () {
                 location.reload();
             }
         });
     }
-    /**
-     * 下拉列表
-     * @param cfgClass
-     * @param obj   	$.ajax({
- 	    type:"GET",
-	    async:false,     //设为同步请求（异步加载的话后面的遍历方法获取不到option）
-	    url:ctxAppSec+"/api/SecGroupInfo",//获取option值得方法返回LIST<String>类型 
-	    success:function(data){
-	        for(var i in data){        //遍历输出LIST添加为option     
-	            $("#jd").append("<option value='"+data[i]+"'>"+data[i]+"</option>");
-	        }
-	    }
-
-	});
-     * @param titleElementId
-     */
-    function initConfigSelect( obj) {
-
-        $.ajax({
-            url: ctxAppSec2+"/api/SecGroupInfo",
-            data: {"Authorization":$.cookie('bearcktkaeskey')},
-            type: "GET",
-            dataType: "json",
-            async: false,
-            success: function (data) {
-                //console.log("fn.getDistrict....." + data);
-
-                var html = "";
-
-                var datas = data.respData;
-
-                for (var i = 0; i < datas.length; i++) {
-
-                    html += '<option value=' + datas[i].groupName + '>' + datas[i].groupName + '</option>';
-                }
-
-                console.log("html======" + html);
-                $("#" + obj).html(html);
-
-                if (typeof obj != "undefined" && obj != null) {
-                    $("#" + titleElementId).val(obj);
-                    //if($("#"+titleElementId)) $("#"+titleElementId).attr("value",$("#"+$this.attr("id")+" option:selected").text());
-                }
-
-            },
-            error: function (data) {
-                try {
-                    layer.msg("请求异常");
-                    return false;
-                } catch (e) {
-                    console.log(e);
-                }
-            }
-        });
-
-    }
-
+   
 </script>
 
 </body>

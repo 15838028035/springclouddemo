@@ -25,7 +25,6 @@ public class SecGroupsServiceImpl  implements SecGroupsService{
 	
 	@Override
 	public int deleteByPrimaryKey(Integer id) {
-		secGroupsMapper.deleteByPrimaryGroupId(id);
 		return secGroupsMapper.deleteByPrimaryKey(id);
 	}
 
@@ -68,14 +67,6 @@ public class SecGroupsServiceImpl  implements SecGroupsService{
 	}
 
 	@Override
-	public List<Map<String, Object>> selectGrouInfoByLogin(String loginNo) {
-		
-		List<Map<String, Object>> resultList=secGroupsMapper.selectGrouInfoByLogin(loginNo);
-		
-		return resultList;
-	}
-
-	@Override
 	public List<Map<String, Object>> selectByInfoKey(Integer id) {
 		List<Integer> gids=secGroupsMapper.selectGrouipId(id);//获取改菜单的子菜单id
 		
@@ -101,58 +92,6 @@ public class SecGroupsServiceImpl  implements SecGroupsService{
 		
 		
 		return parentInfo;
-		
-		
-		
-//		List<Map<String,Object>> data=secGroupsMapper.selectByInfoKeyData();//查询所有的菜单
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-////		List<TreeBean> treeList=new ArrayList<TreeBean>();
-////		SecGroups grous=new SecGroups();
-////		grous.setId(id);
-////		List<SecGroups> dataList=secGroupsMapper.selectByExample(grous);//获取所有的菜单
-////		List<Integer> gids=secGroupsMapper.selectGrouipId(id);
-////		if(null!=dataList&&dataList.size()>0) {
-////			for (SecGroups sp : dataList) {
-////				TreeBean treeBean=new TreeBean();
-////				if(sp.getId()!=0) {
-////					treeBean.setId(sp.getId());
-////					treeBean.setpId(sp.getParentId());
-////					treeBean.setParent(false);
-////					treeBean.setLeaf(false);
-////					if(gids.contains(sp.getId())) {
-////					    treeBean.setChoiseRequir(true);
-////					}else {
-////						 treeBean.setChoiseRequir(false);
-////					}
-////					treeBean.setType("菜单1");
-////					treeList.add(treeBean);
-////				}
-////			}
-////		}
-//		
-//		
-//		
-//		
-//		
-//		List<Map<String,Object>>	resultList=new ArrayList<Map<String,Object>>();
-//		
-//		
-//		for (Map<String, Object> map : resultList) {
-//			if(gids.contains(map.get("id"))) {
-//				map.put("flag", "true");
-//				
-//			}else {
-//				map.put("flag", "false");
-//			}
-//			
-//		}
 		
 	}
 private Map<String,Object> setGroupInfo(List<Map<String,Object>> classInfo,List<Integer> gids){
