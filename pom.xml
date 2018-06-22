@@ -16,6 +16,7 @@
 		<module>microservice-hystrix-turbine</module>
 		<module>microservice-hystrix-dashboard</module>
 
+		<module>microservice-common-util</module>
 		<module>microservice-common-model</module>
 		<module>microservice-provider-dal</module>
 
@@ -50,6 +51,12 @@
 				<scope>import</scope>
 			</dependency>
 
+            <dependency>
+                <groupId>com.zhongkexinli.cloud</groupId>
+                <artifactId>microservice-common-util</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            
 			<dependency>
 				<groupId>com.zhongkexinli.cloud</groupId>
 				<artifactId>microservice-common-model</artifactId>

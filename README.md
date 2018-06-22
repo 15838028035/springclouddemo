@@ -21,6 +21,7 @@
 ## 模块介绍：
 | 项目名称                                     | 描述                                                                                                                     |
 | -------------------| ---------------------------------------- |
+| microservice-common-util            | 公共工具类 |
 | microservice-common-model            | 公共实体对象 |
 | microservice-provider-dal            | 公共dao和service层 |
 | microservice-discovery-eureka        | 注册中心              |

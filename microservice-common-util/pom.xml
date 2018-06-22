@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>microservice-common-model</artifactId>
+  <artifactId>microservice-common-util</artifactId>
   <packaging>jar</packaging>
 
   <parent>
@@ -14,19 +14,9 @@
 
  <dependencies>
         <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>1.2.0</version>
-        </dependency>
-        <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
             <version>1.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.0.28</version>
         </dependency>
 
         <dependency>
@@ -82,11 +72,6 @@
         <artifactId>spring-boot-devtools</artifactId>
         <optional>true</optional>
       </dependency>
-      
-      <dependency>
-            <groupId>com.zhongkexinli.cloud</groupId>
-            <artifactId>microservice-common-util</artifactId>
-        </dependency>
 
     </dependencies>
     
