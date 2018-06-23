@@ -71,5 +71,17 @@
 
 		</dependencies>
 	</dependencyManagement>
+	
+	 <!-- 用于上传远程maven私服的配置 -->
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://192.168.96.88:8081/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://192.168.96.88:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
