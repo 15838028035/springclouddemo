@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RefreshScope
 public class ConfigClientController {
-  @Value("${profile}")
+  @Value("${spring.cloud.config.profile}")
   private String profile;
 
   @GetMapping("/hello")
