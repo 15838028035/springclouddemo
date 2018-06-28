@@ -118,10 +118,11 @@ public class WeixinSecrityApplication {
         }
        return ip;
     }
+	
 	public static class Account {
-		public String username;
-		public String password;
-		public String inputStr;
+		private  String username;
+		private String password;
+		private String inputStr;
 	}
 
 	public static void main(String[] args) {
