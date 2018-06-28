@@ -1,3 +1,6 @@
+
+[![Quality Gate](http://192.168.96.88:9000/dashboard?id=com.zhongkexinli.cloud%3Aspring-cloud-microservice-demo&metric=alert_status)](http://192.168.96.88:9000/dashboard?id=com.zhongkexinli.cloud%3Aspring-cloud-microservice-demo)
+
 # 项目简介
 内容主要包含：
 
