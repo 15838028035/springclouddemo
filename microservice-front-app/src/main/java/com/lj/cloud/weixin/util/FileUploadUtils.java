@@ -16,11 +16,11 @@ import com.aliyun.oss.model.PutObjectResult;
 public class FileUploadUtils {
 
     private static Logger log             = LoggerFactory.getLogger(FileUploadUtils.class);
-    public static String  accessKeyId     = "6MqJQ1afWMwdt82V";                            // "6Horvio4CguKwkTQ";
+    public static final String  accessKeyId     = "6MqJQ1afWMwdt82V";                            // "6Horvio4CguKwkTQ";
                                                                                             // "6MqJQ1afWMwdt82V"; 信融
-    public static String  accessKeySecret = "aalHStrgkbXhMvIXC96RGPRbJiavWN";              // "Y1ACw5BI1WRjiWd8G0OupsQJmpf61z";
+    public static  final String  accessKeySecret = "aalHStrgkbXhMvIXC96RGPRbJiavWN";              // "Y1ACw5BI1WRjiWd8G0OupsQJmpf61z";
                                                                                             // aalHStrgkbXhMvIXC96RGPRbJiavWN;信融
-    public static String  endpoint        = "http://oss-cn-shanghai.aliyuncs.com";         // "http://oss-cn-hangzhou.aliyuncs.com";
+    public static final String  endpoint        = "http://oss-cn-shanghai.aliyuncs.com";         // "http://oss-cn-hangzhou.aliyuncs.com";
 
     // public static String bucketName = "weidaiosstest";
 
