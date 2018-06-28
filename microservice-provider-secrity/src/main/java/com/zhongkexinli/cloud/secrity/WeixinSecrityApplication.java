@@ -59,8 +59,6 @@ public class WeixinSecrityApplication {
 				RestAPIResult2.setRespData(secAdminUser);
 				*/
 			} catch (Exception e) {
-				System.out.println("---------------");
-				System.out.println(r);
 				e.printStackTrace();
 			}
 			return RestAPIResult2;
