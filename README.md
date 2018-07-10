@@ -34,6 +34,7 @@
 | microservice-provider-secrity       | 服务提供者          |
 | microservice-api-gateway                 | API Gateway  
 | microservice-front-app                   | 网站前台静态页面, 服务消费客户端     |
+| microservice-provider-kafka              | kafka消息组件demo     |
 
 
 ## 主机规划：
@@ -44,6 +45,7 @@
 | microservice-front-app                   | 8022 | 网站前台静态页面, 服务消费客户端   |                 |
 | microservice-discovery-eureka            | 9003 | 注册中心                                                    |                 |
 | microservice-provider-secrity            | 8002 | 服务提供者                                                |                  |
+| microservice-provider-secrity            | 8003 | kafka消息组件demo        |                  |
 
 ## 快速上手
 
