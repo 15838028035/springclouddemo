@@ -1,4 +1,8 @@
 
+[![travis-ci](https://travis-ci.org/15838028035/springclouddemo.svg?branch=master)]
+(https://travis-ci.org/15838028035/springclouddemo.svg?branch=master)
+
+
 [![Quality Gate](http://192.168.96.88:9000/dashboard?id=com.zhongkexinli.cloud%3Aspring-cloud-microservice-demo&metric=alert_status)](http://192.168.96.88:9000/dashboard?id=com.zhongkexinli.cloud%3Aspring-cloud-microservice-demo)
 
 # 项目简介
