@@ -14,8 +14,7 @@ import com.zhongkexinli.cloud.secrity.service.UpmUserService;
 import com.zhongkexinli.cloud.secrity.util.RandomValidateCodeUtil;
 import com.zhongkexinli.micro.serv.common.bean.RestAPIResult2;
 import com.zhongkexinli.micro.serv.common.bean.secrity.UpmUser;
-import com.zhongkexinli.micro.serv.common.constant.SystemConstants;
-import com.zhongkexinli.micro.serv.common.util.Encrypt;
+import com.zhongkexinli.micro.serv.common.constant.CommonConstants;
 import com.zhongkexinli.micro.serv.common.util.StringUtil;
 
 /**
@@ -55,9 +54,9 @@ public class UpmUserController {
 			return restAPIResult;
 		}*/
 		
-		String enPwd = Encrypt.getEncrypt(pwd, "SHA-256");
+		//String enPwd = Encrypt.getEncrypt(pwd, "SHA-256");
 		 
-		UpmUser upmUser = upmUserService.login(mobile, enPwd);
+		UpmUser upmUser = upmUserService.login(mobile, pwd);
 		
 		if(upmUser==null || (upmUser!=null &&upmUser.getId()==null)) {
 			restAPIResult.setRespMsg("账号或密码错误");
@@ -105,7 +104,7 @@ public class UpmUserController {
 	@RequestMapping(value = "/upmUser/signup", method = RequestMethod.GET)
 	public String signup(String mobile, String pwd) {
 		boolean result = upmUserService.signup(mobile, pwd);
-		return result ? SystemConstants.Code.SUCCESS : SystemConstants.Code.FAIL;
+		return result ? String.valueOf(CommonConstants.SUCCESS) : CommonConstants.FAIL;
 	}
 	
 	 /**
