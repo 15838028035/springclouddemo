@@ -87,6 +87,9 @@
    <profiles> 
     <profile>  
         <id>nexus</id>
+         <activation>
+               <activeByDefault>true</activeByDefault>
+         </activation>
         <repositories>
             <repository>  
                 <id>nexus1</id>  
@@ -117,8 +120,5 @@
 
     
     </profiles>
-    <activeProfiles>
-        <activeProfile>nexus</activeProfile>
-    </activeProfiles>
 
 </project>
