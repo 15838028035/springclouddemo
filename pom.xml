@@ -52,7 +52,7 @@
 			</dependency>
 
             <dependency>
-                <groupId>com.zhongkexinli.cloud</groupId>
+                <groupId>com.thinkit.cloud</groupId>
                 <artifactId>microservice-common-util</artifactId>
                 <version>${microservice-common-util.version}</version>
             </dependency>
