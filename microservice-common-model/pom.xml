@@ -84,7 +84,7 @@
       </dependency>
       
       <dependency>
-            <groupId>com.zhongkexinli.cloud</groupId>
+            <groupId>cn.com.thinkit.cloud</groupId>
             <artifactId>microservice-common-util</artifactId>
         </dependency>
 
