@@ -1,4 +1,4 @@
-FROM java:8
+FROM busybox
 VOLUME /tmp
 ADD microservice-config-server-eureka-0.0.1-SNAPSHOT.jar  microservice-config-server-eureka-0.0.1-SNAPSHOT.jar
 RUN bash -c 'touch /microservice-config-server-eureka-0.0.1-SNAPSHOT.jar'
