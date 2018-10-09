@@ -72,6 +72,15 @@
 		</dependencies>
 	</dependencyManagement>
 	
+	<!-- 新增公网地址 -->
+	<repositories>
+	  <repository>
+	      <snapshots />
+	      <id>sonatype snapshots</id>
+	      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+	  </repository>
+	</repositories>
+
 	 <!-- 用于上传远程maven私服的配置 -->
     <distributionManagement>
         <repository>
