@@ -1,6 +1,7 @@
 package com.zhongkexinli.cloud;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -11,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-	private final Logger logger = Logger.getLogger(getClass());
+	private final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	@Autowired
 	private DiscoveryClient discoveryClient;
 	
 	@RequestMapping("/hello")
 	public String hello(){
-		ServiceInstance serviceInstance = discoveryClient.getLocalServiceInstance();
+		ServiceInstance serviceInstance = discoveryClient.getInstances("eureka-server").get(0);
 		logger.info("/hello host:" + serviceInstance.getHost() + ",serviceId:" +serviceInstance.getServiceId()+ ",port:"+serviceInstance.getPort());
 		return "/hello host:" + serviceInstance.getHost() + ",serviceId:" +serviceInstance.getServiceId()+ ",port:"+serviceInstance.getPort();
 	}
