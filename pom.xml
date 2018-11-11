@@ -86,11 +86,11 @@
              </snapshots>
          </repository>
             
-<!-- 	  <repository> -->
-<!-- 	      <snapshots /> -->
-<!-- 	      <id>sonatype snapshots</id> -->
-<!-- 	      <url>https://oss.sonatype.org/content/repositories/snapshots/</url> -->
-<!-- 	  </repository> -->
+	  <repository>
+	      <snapshots />
+	      <id>sonatype snapshots</id>
+	      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+	  </repository>
 	</repositories>
 
 	 <!-- 用于上传远程maven私服的配置 -->
