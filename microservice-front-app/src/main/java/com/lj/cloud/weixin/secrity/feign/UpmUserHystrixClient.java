@@ -32,15 +32,9 @@ public interface UpmUserHystrixClient {
 		 */
 		@RequestMapping(value = "/upmUser/signup", method = RequestMethod.POST)
 		public String signup(@RequestBody UpmUser upmUser) ;
-		
-		/**
-		@RequestMapping("api/upmGroups/{id}")
-		  public UpmGroups findById( Integer id) ;*/
-		
 
 	  /**
 	   * 这边采取了和Spring Cloud官方文档相同的做法，将fallback类作为内部类放入Feign的接口中，当然也可以单独写一个fallback类。
-	   * @author eacdy
 	   */
 	  @Component
 	  static class UpmUserHystrixClientFallback implements UpmUserHystrixClient {
@@ -49,18 +43,16 @@ public interface UpmUserHystrixClient {
 		@Override
 		public UpmUser login(String mobile, String pwd) {
 			UpmUserHystrixClientFallback.LOGGER.info("异常发生，进入fallback方法，接收的参数：id = {}", mobile);
-		      UpmUser UpmUser = new UpmUser();
-		      UpmUser.setId(-1);
-		      UpmUser.setUserName("not found");
-		      return UpmUser;
+			UpmUser upmUser = new UpmUser();
+			upmUser.setId(-1);
+			upmUser.setUserName("not found");
+		      return upmUser;
 		}
-		
 
 		@Override
 		public String signup(UpmUser upmUser) {
 			return null;
 		}
-
 
 		/**
 	     * hystrix fallback方法
@@ -70,10 +62,10 @@ public interface UpmUserHystrixClient {
 	    @Override
 	    public UpmUser findByIdFeign(Long id) {
 	    	UpmUserHystrixClientFallback.LOGGER.info("异常发生，进入fallback方法，接收的参数：id = {}", id);
-	      UpmUser UpmUser = new UpmUser();
-	      UpmUser.setId(-1);
-	      UpmUser.setUserName("not found");
-	      return UpmUser;
+	      UpmUser upmUser = new UpmUser();
+	      upmUser.setId(-1);
+	      upmUser.setUserName("not found");
+	      return upmUser;
 	    }
 	    
 	  }
