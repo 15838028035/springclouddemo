@@ -46,7 +46,7 @@ public class UpmUserController {
 		 
 		UpmUser upmUser = upmUserService.login(mobile, pwd);
 		
-		if(upmUser==null || (upmUser!=null && upmUser.getId()==null)) {
+		if(upmUser==null || upmUser.getId()==null) {
 			restAPIResult.setRespMsg("账号或密码错误");
 			return restAPIResult;
 		}
@@ -78,8 +78,7 @@ public class UpmUserController {
 	 */
 	@RequestMapping(value = "/upmUser/login/{mobile}/{pwd}", method = {RequestMethod.POST})
 	public UpmUser login(@PathVariable String mobile, @PathVariable String pwd) {
-		UpmUser result = upmUserService.login(mobile, pwd);
-		return result;
+		return upmUserService.login(mobile, pwd);
 	}
 
 	/**
@@ -104,8 +103,7 @@ public class UpmUserController {
 	   */
 	  @GetMapping("/upmUser/{id}")
 	  public UpmUser findById(@PathVariable Integer id) {
-		  UpmUser findOne = this.upmUserService.selectByPrimaryKey(id);
-	    return findOne;
+		  return this.upmUserService.selectByPrimaryKey(id);
 	  }
 	  
 }

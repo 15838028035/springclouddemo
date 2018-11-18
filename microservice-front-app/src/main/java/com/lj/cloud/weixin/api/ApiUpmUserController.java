@@ -22,8 +22,7 @@ public class ApiUpmUserController {
   @ApiOperation(value = "查询用户信息登陆")
   @GetMapping("/api/upmUser/{id}")
   public UpmUser findByIdFeign(@PathVariable Long id) {
-    UpmUser upmUser = this.upmUserHystrixClient.findByIdFeign(id);
-    return upmUser;
+    return this.upmUserHystrixClient.findByIdFeign(id);
   }
 	
   @ApiOperation(value = "登录接口")

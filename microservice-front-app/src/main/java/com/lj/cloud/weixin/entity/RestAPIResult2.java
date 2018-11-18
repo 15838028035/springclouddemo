@@ -19,8 +19,6 @@ public class RestAPIResult2 implements Serializable {
     private int respCode = 1;
 
     private String respMsg="成功！";
-    
-    private String dataCode;
 
     public int getRespCode() {
         return respCode;
