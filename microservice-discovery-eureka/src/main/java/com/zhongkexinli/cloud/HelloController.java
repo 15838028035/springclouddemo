@@ -20,7 +20,7 @@ public class HelloController {
 	@RequestMapping("/hello")
 	public String hello(){
 		ServiceInstance serviceInstance = discoveryClient.getInstances("eureka-server").get(0);
-		String infoMsg = "/hello host:{0} ,serviceId:{1} ,port:{2}",serviceInstance.getHost(),serviceInstance.getServiceId(),serviceInstance.getPort();
+		String infoMsg = String.format("/hello host:{0} ,serviceId:{1} ,port:{2}",serviceInstance.getHost(),serviceInstance.getServiceId(),serviceInstance.getPort());
 		logger.info(infoMsg);
 		return infoMsg;
 	}
