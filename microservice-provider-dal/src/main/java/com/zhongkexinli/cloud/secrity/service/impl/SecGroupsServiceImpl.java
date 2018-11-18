@@ -98,7 +98,7 @@ private Map<String,Object> setGroupInfo(List<Map<String,Object>> classInfo,List<
 	
 	Map<String,Object> map=new HashMap<String, Object>();
 	boolean flag=false;
-	 if(classInfo!=null&&classInfo.size()>0) {
+	 if(classInfo!=null&&!classInfo.isEmpty()) {
 		 for (Map<String, Object> map2 : classInfo) {
 			 if(gids.contains(map2.get("id"))){
 				 map2.put("childrenFlag", "true");
@@ -145,6 +145,7 @@ private Map<String,Object> setGroupInfo(List<Map<String,Object>> classInfo,List<
 
 	@Override
 	public void addByPrimaryKeySelective(SecGroups secGrops, List<String> urids,Integer gid) {
+		logger.info("gid {}", gid);
 		if(!urids.isEmpty()) {
 			for (String rulId : urids) {
 				Integer ruiId=Integer.valueOf(rulId);

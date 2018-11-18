@@ -29,9 +29,7 @@ public class ApiUpmUserController {
   @ApiOperation(value = "登录接口")
   @RequestMapping(value = "/upmUser/login/{mobile}/{pwd}", method = {RequestMethod.POST})
   public UpmUser login( String mobile, String pwd) {
-    UpmUser upmUser = this.upmUserHystrixClient.login(mobile, pwd);
-    return upmUser;
+    return this.upmUserHystrixClient.login(mobile, pwd);
   }
-  
   
 }
