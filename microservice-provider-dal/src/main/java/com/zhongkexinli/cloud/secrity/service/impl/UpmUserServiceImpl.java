@@ -63,12 +63,11 @@ public class UpmUserServiceImpl implements UpmUserService{
 		List<UpmUser> list = upmUserMapper.selectByExample(upmUser);
 		logger.info("{}登陆成功!",mobile);
 		
-		if(list==null || list.size()==0){
+		if(list.isEmpty()){
 			return new UpmUser();
 		}
 		return list.get(0);
 	}
-
 
 	/**
 	 * @param mobile
@@ -81,7 +80,7 @@ public class UpmUserServiceImpl implements UpmUserService{
 		upmUser.setMobile(mobile);
 		
 		List<UpmUser> list = upmUserMapper.selectByExample(upmUser);
-		if (list!=null &&list.size()>0) {
+		if (!list.isEmpty()) {
 			logger.warn("{}-用户已存在，请选择其它用户名!",mobile);
 			return false;
 		}
