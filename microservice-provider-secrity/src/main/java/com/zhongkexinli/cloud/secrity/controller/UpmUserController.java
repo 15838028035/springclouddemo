@@ -43,11 +43,10 @@ public class UpmUserController {
 			restAPIResult.setRespMsg("参数不能为空");
 			return restAPIResult;
 		}
-		//String enPwd = Encrypt.getEncrypt(pwd, "SHA-256");
 		 
 		UpmUser upmUser = upmUserService.login(mobile, pwd);
 		
-		if(upmUser==null || (upmUser!=null &&upmUser.getId()==null)) {
+		if(upmUser==null || (upmUser!=null && upmUser.getId()==null)) {
 			restAPIResult.setRespMsg("账号或密码错误");
 			return restAPIResult;
 		}
