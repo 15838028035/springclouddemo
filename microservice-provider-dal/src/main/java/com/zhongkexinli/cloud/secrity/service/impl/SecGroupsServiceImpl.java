@@ -129,7 +129,7 @@ private Map<String,Object> setGroupInfo(List<Map<String,Object>> classInfo,List<
 	@Override
 	public void updateByPrimaryKeySelective(Integer id, List<String> urlId,String remarks,String groupName) {
 		secGroupsMapper.deleteByPrimaryGroupId(id);
-		if(urlId!=null&&urlId.size()>0) {
+		if(!urlId.isEmpty()) {
 			SecGroups group=new SecGroups();
 			group.setRemarks(remarks);
 			group.setGroupName(groupName);;
@@ -145,8 +145,7 @@ private Map<String,Object> setGroupInfo(List<Map<String,Object>> classInfo,List<
 
 	@Override
 	public void addByPrimaryKeySelective(SecGroups secGrops, List<String> urids,Integer gid) {
-	System.out.println("------------------------------");
-		if(urids!=null&&urids.size()>0) {
+		if(!urids.isEmpty()) {
 			for (String rulId : urids) {
 				Integer ruiId=Integer.valueOf(rulId);
 				secGroupsMapper.insertURL(gid,ruiId);
