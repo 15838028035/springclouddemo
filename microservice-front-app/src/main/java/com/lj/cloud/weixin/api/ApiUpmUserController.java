@@ -22,16 +22,13 @@ public class ApiUpmUserController {
   @ApiOperation(value = "查询用户信息登陆")
   @GetMapping("/api/upmUser/{id}")
   public UpmUser findByIdFeign(@PathVariable Long id) {
-    UpmUser upmUser = this.upmUserHystrixClient.findByIdFeign(id);
-    return upmUser;
+    return this.upmUserHystrixClient.findByIdFeign(id);
   }
 	
   @ApiOperation(value = "登录接口")
   @RequestMapping(value = "/upmUser/login/{mobile}/{pwd}", method = {RequestMethod.POST})
   public UpmUser login( String mobile, String pwd) {
-    UpmUser upmUser = this.upmUserHystrixClient.login(mobile, pwd);
-    return upmUser;
+    return this.upmUserHystrixClient.login(mobile, pwd);
   }
-  
   
 }

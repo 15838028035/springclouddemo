@@ -2,7 +2,6 @@ package com.zhongkexinli.cloud.secrity.util;
 
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -12,7 +11,6 @@ public class JwtUtil {
 
     public static String generateToken(String username) {
         HashMap<String, Object> map = new HashMap<>();
-        //you can put any data in the map
         map.put("username", username);
         String jwt = Jwts.builder()
                 .setClaims(map)
@@ -24,8 +22,7 @@ public class JwtUtil {
 
     public static void validateToken(String token) {
         try {
-            // parse the token.
-            Map<String, Object> body = Jwts.parser()
+            Jwts.parser()
                     .setSigningKey(SECRET)
                     .parseClaimsJws(token.replace("Bearer ",""))
                     .getBody();

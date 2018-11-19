@@ -1,29 +1,16 @@
 package com.zhongkexinli.cloud.secrity.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.zhongkexinli.cloud.secrity.RedisBusiness;
-
-
 public class BaseController {
-
-	@Autowired
-	RedisBusiness r;
+	
+	public static final int LOGIN_UID = 0;
+	public static final String USER_NAME = "admin";
+	
 	public Integer getLoginId() {
 		//fixed me
-		return 0;
+		return LOGIN_UID;
 	}
 
 	public String getUserName() {
-		String loginNo="";
-		try {
-			loginNo = r.get("loginNo");
-			return loginNo;
-		} catch (Exception e) {
-			System.out.println("---------------");
-			System.out.println("redis===="+r);
-			e.printStackTrace();
-		}
-		return loginNo;
+		return USER_NAME;
 	}
 }

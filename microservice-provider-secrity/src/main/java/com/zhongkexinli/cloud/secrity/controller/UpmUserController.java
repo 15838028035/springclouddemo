@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zhongkexinli.cloud.secrity.service.UpmUserService;
-import com.zhongkexinli.cloud.secrity.util.RandomValidateCodeUtil;
 import com.zhongkexinli.micro.serv.common.bean.RestAPIResult2;
 import com.zhongkexinli.micro.serv.common.bean.secrity.UpmUser;
 import com.zhongkexinli.micro.serv.common.constant.CommonConstants;
@@ -44,21 +43,10 @@ public class UpmUserController {
 			restAPIResult.setRespMsg("参数不能为空");
 			return restAPIResult;
 		}
-		
-		//校验验证码
-		String random = (String) session.getAttribute(RandomValidateCodeUtil.RANDOMCODEKEY);
-		
-		/** 取消验证码校验，获得验证码一直未空，有问题
-		 if(!StringUtil.isEqualsIgnoreCase(random, imgCode)){
-			restAPIResult.setRespMsg("验证码错误");
-			return restAPIResult;
-		}*/
-		
-		//String enPwd = Encrypt.getEncrypt(pwd, "SHA-256");
 		 
 		UpmUser upmUser = upmUserService.login(mobile, pwd);
 		
-		if(upmUser==null || (upmUser!=null &&upmUser.getId()==null)) {
+		if(upmUser==null || upmUser.getId()==null) {
 			restAPIResult.setRespMsg("账号或密码错误");
 			return restAPIResult;
 		}
@@ -90,8 +78,7 @@ public class UpmUserController {
 	 */
 	@RequestMapping(value = "/upmUser/login/{mobile}/{pwd}", method = {RequestMethod.POST})
 	public UpmUser login(@PathVariable String mobile, @PathVariable String pwd) {
-		UpmUser result = upmUserService.login(mobile, pwd);
-		return result;
+		return upmUserService.login(mobile, pwd);
 	}
 
 	/**
@@ -116,8 +103,7 @@ public class UpmUserController {
 	   */
 	  @GetMapping("/upmUser/{id}")
 	  public UpmUser findById(@PathVariable Integer id) {
-		  UpmUser findOne = this.upmUserService.selectByPrimaryKey(id);
-	    return findOne;
+		  return this.upmUserService.selectByPrimaryKey(id);
 	  }
 	  
 }

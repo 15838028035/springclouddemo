@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  */
 @ConfigurationProperties(prefix = DataSourceProperties.DS, ignoreUnknownFields = false)
 public class DataSourceProperties {
-	final static String DS = "spring.datasource";
+	public  static final  String DS = "spring.datasource";
 
 	private String url;
 	private String username;
