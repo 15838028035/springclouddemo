@@ -36,8 +36,7 @@
 | microservice-hystrix-dashboard       | 服务断容面板              |
 | microservice-provider-secrity       | 服务提供者          |
 | microservice-provider-filemanager   | 文件服务提供者          |
-
-| microservice-api-gateway                 | API Gateway  
+| microservice-api-gateway                 | API Gateway            |
 | microservice-front-app                   | 网站前台静态页面, 服务消费客户端     |
 | microservice-provider-kafka              | kafka消息组件demo     |
 
