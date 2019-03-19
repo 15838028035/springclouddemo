@@ -61,7 +61,6 @@
 | microservice-config-client-eureka        | 9030、9031、9032 | 可配置的注册中心客户端                                                    |                 |
 | microservice-hystrix-turbine             | 9040、9041、9042 | Turbine集群监控                                                    |                 |
 | microservice-hystrix-dashboard           | 9050、9051、9052 | 服务断容面板                                                    |                 |
-
 | microservice-provider-secrity            | 8010、8011、8012 | 服务提供者                                                |                  |
 | microservice-front-app                   | 8020、8021、8022 | 网站前台静态页面, 服务消费客户端   |                 |
 | microservice-provider-filemanager        | 8030、8031、8032 | 服务提供者                                                |                  |
