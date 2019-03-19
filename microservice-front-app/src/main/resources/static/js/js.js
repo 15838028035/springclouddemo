@@ -4,12 +4,12 @@ var ctx = window.location.protocol + "//" + window.location.host;
 var hostname = window.location.protocol + "//" + window.location.hostname;
 
 
-var ctxApp = "http://192.168.96.88:8022";
+var ctxApp = "http://192.168.96.88:8020";
 var ctxAppSec = "http://192.168.96.88:8050/sec";
 
 
 if(hostname == window.location.protocol + "//" +"127.0.0.1" || hostname == window.location.protocol + "//" +"localhost"){
-	 ctxApp = "http://127.0.0.1:8022";
+	 ctxApp = "http://127.0.0.1:8020";
 	 ctxAppSec = "http://127.0.0.1:8050/sec";
 }
 

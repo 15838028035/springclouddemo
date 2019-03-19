@@ -46,11 +46,30 @@
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
 | microservice-api-gateway                 | 8050 | API Gateway            |                 |
-| microservice-front-app                   | 8022 | 网站前台静态页面, 服务消费客户端   |                 |
-| microservice-discovery-eureka            | 9003 | 注册中心                                                    |                 |
-| microservice-provider-secrity            | 8002 | 服务提供者                                                |                  |
-| microservice-provider-kafka            | 8003 | kafka消息组件demo        |                  |
-| microservice-provider-filemanager            | 8004 | 服务提供者                                                |                  |
+| microservice-front-app                   | 8020 | 网站前台静态页面, 服务消费客户端   |                 |
+| microservice-discovery-eureka            | 9010 | 注册中心                                                    |                 |
+| microservice-provider-secrity            | 8010 | 服务提供者                                                |                  |
+| microservice-provider-kafka              | 8040 | kafka消息组件demo        |                  |
+| microservice-provider-filemanager        | 8030 | 服务提供者                                                |                  |
+
+## 集群主机规划：
+
+| 项目名称                                     | 端口   | 描述                     | URL             |
+| ---------------------------------------- | ---- | ---------------------- | --------------- |
+| microservice-discovery-eureka            | 9010、9011、9012 | 注册中心                                                    |                 |
+| microservice-config-server-eureka        | 9020、9021、9022 | 可配置的注册中心服务端                                           |                 |
+| microservice-config-client-eureka        | 9030、9031、9032 | 可配置的注册中心客户端                                                    |                 |
+| microservice-hystrix-turbine             | 9040、9041、9042 | Turbine集群监控                                                    |                 |
+| microservice-hystrix-dashboard           | 9050、9051、9052 | 服务断容面板                                                    |                 |
+
+| microservice-provider-secrity            | 8010、8011、8012 | 服务提供者                                                |                  |
+| microservice-front-app                   | 8020、8021、8022 | 网站前台静态页面, 服务消费客户端   |                 |
+| microservice-provider-filemanager        | 8030、8031、8032 | 服务提供者                                                |                  |
+| microservice-provider-kafka              | 8040、8041、8042 | kafka消息组件demo        |                  |
+| microservice-api-gateway                 | 8050、8051、8052、 | API Gateway            |                 |
+
+
+
 
 ## 快速上手
 
@@ -75,9 +94,9 @@
      microservice-api-gateway
      
     front-app接口访问地址:
-         http://127.0.0.1:8022/swagger-ui.html
+         http://127.0.0.1:8020/swagger-ui.html
     microservice-provider-secrity接口访问地址:
-        http://127.0.0.1:8002/swagger-ui.html     
+        http://127.0.0.1:8010/swagger-ui.html     
   
 
 # 代码贡献
