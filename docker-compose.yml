@@ -1,0 +1,45 @@
+version: '2'
+services:
+  microservice-discovery-eureka:
+    image: microservice-discovery-eureka
+    container_name: microservice-discovery-eureka-9010
+    ports:
+      - "9010:9010"
+    environment:
+      - server:
+        port: 9010
+      - eureka:
+        instance:
+          hostname: 127.0.0.1
+        client:
+          serviceUrl:
+            defaultZone: http://127.0.0.1:9011/eureka/,http://127.0.0.1:9012/eureka/
+   
+    image: microservice-discovery-eureka
+    container_name: microservice-discovery-eureka-9011
+    ports:
+      - "9011:9011"
+    environment:
+      - server:
+        port: 9011
+      - eureka:
+        instance:
+          hostname: 127.0.0.1
+        client:
+          serviceUrl:
+            defaultZone: http://127.0.0.1:9010/eureka/,http://127.0.0.1:9012/eureka/
+            
+    image: microservice-discovery-eureka
+    container_name: microservice-discovery-eureka-9012
+    ports:
+      - "9012:9012"
+    environment:
+      - server:
+        port: 9012
+      - eureka:
+        instance:
+          hostname: 127.0.0.1
+        client:
+          serviceUrl:
+            defaultZone: http://127.0.0.1:9010/eureka/,http://127.0.0.1:9011/eureka/
+  
