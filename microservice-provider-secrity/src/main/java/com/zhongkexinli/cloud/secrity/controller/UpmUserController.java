@@ -63,10 +63,7 @@ public class UpmUserController {
 	 */
 	@RequestMapping(value = "/upmUser/doLoginOut", method = {RequestMethod.GET,RequestMethod.POST})
 	public RestAPIResult2  doLoginOutJsonP( HttpSession session, HttpServletRequest request) throws Exception {
-		
-		RestAPIResult2 restAPIResult = new RestAPIResult2();
-		restAPIResult.success(restAPIResult);;
-		return restAPIResult;
+		return new RestAPIResult2().respCode(1).respMsg("操作成功");
 	}
 	
 	/**
