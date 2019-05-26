@@ -1,5 +1,5 @@
-FROM java:8
+FROM adoptopenjdk/openjdk8-openj9:alpine-slim
 VOLUME /tmp
-ADD api-gateway-microservice-0.1.0.jar app.jar
+ADD api-gateway-microservice-0.0.2-SNAPSHOT.jar app.jar
 RUN bash -c 'touch /app.jar'
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
