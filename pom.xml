@@ -24,8 +24,7 @@
 		<module>microservice-provider-filemanager</module>
 
 		<module>microservice-front-app</module>
-
-<!-- 		<module>microservice-api-gateway</module> -->
+		<module>microservice-api-gateway</module>
 
 
 	</modules>
